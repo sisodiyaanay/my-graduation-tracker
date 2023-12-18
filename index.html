@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Credits Tracker</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha384-l5fSIWd3+LkxX2lD5I78nR+tkIQx7fC6tZSeJEGpYkCXLsLFfoDJKsD4yM6sM2s" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div id="userInfoSection" class="container">
+        <label class="inputLabel" for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <!-- <label class="inputLabel" for="rollNo">Roll Number:</label>
+        <input type="text" id="rollNo" placeholder="Enter your roll number"> -->
+
+        <label class="inputLabel" for="branch">Branch:</label>
+        <select id="branch">
+            <option value="CSE">Computer Science and Engineering</option>
+            <option value="EE">Electrical Engineering</option>
+            <option value="ME">Mechanical Engineering</option>
+            <option value="CE">Civil Engineering</option>
+            <option value="CHE">Chemical Engineering</option>
+            <option value="MSE">Materials Engineering</option>
+        </select>
+
+        <label class="inputLabel" for="program">Program:</label>
+        <select id="program">
+            <option value="B.Tech">B.Tech</option>
+            <option value="M.Tech">M.Tech</option>
+        </select>
+
+        <label class="inputLabel" for="admissionYear">Year of Admission (2019-2024):</label>
+        <select id="admissionYear">
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+        </select>
+
+        <button onclick="showInputSection()">Next</button>
+    </div>
+
+    <div id="inputSection" class="container" style="display: none;">
+        <label id="copyPaste" for="inputText">Copy & paste data from IMS</label>
+        <textarea id="inputText" rows="10" cols="50" placeholder="Paste your data here"></textarea>
+        <button onclick="parseInput()">Parse Input</button>
+    </div>
+
+    <div id="outputSection" class="output-container" style="display: none;">
+        <div id="outputSectionContainer">
+            <div id="heading-and-name">
+                <h1 class="main-heading">Graduation Credits Tracker</h1>
+
+                <div id="userInfo"></div>
+            </div>
+            <div id="totalCredits"></div>
+            <div id="helper-container">
+                <div id="left-container">
+                    <div id="total-display">
+                        <div id="tot"></div>
+                        <div id="max"></div>
+                        <div id="mainDisplay"></div>
+                    </div>
+
+                    <div id="electives">
+                        <div class="subContainer">
+
+                            <div class="box" id="compulsoryBox">
+                                <div id="compulsoryContainer" class="total-container"></div>
+                            </div>
+
+                            <div class="box" id="HSBox">
+                                <div id="HSContainer" class="total-container"></div>
+                            </div>
+
+                            <div class="box" id="BSElectiveBox">
+                                <div id="BSElectiveContainer" class="total-container"></div>
+                            </div>
+
+                            <div class="box" id="openElectiveBox">
+                                <div id="OpenElectiveContainer" class="total-container"></div>
+                            </div>
+
+                            <div class="box" id="ScienceBasketBox">
+                                <div id="ScienceBasketContainer" class="total-container"></div>
+                            </div>
+
+                            <div class="box" id="MathBasketBox">
+                                <div id="MathBasketContainer" class="total-container"></div>
+                            </div>
+
+                            <div class="box" id="ExtendedCoreBox">
+                                <div id="ExtendedCoreContainer" class="total-container"></div>
+                            </div>
+
+                            <div class="box" id="OpenProjectBox">
+                                <div id="OpenProjectCourseContainer" class="total-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="right-container">
+                    <div id="right-percentage">
+                        <div id="chartContainer">
+                            <!-- Chart will be appended here -->
+                        </div>
+                        <div id="percentage-and-label">
+                            <div id="percentageContainer">
+                                <span id="percentageValue">0%</span> <br>Engineering Completed
+                            </div>
+                            <div id="piechart-label">
+                                <div id="completed-label">
+                                    <div id="completed-box"></div> Completed
+                                </div>
+                                <div id="total-label">
+                                    <div id="total-box"></div>Remaining
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="comingsoon">
+                        More features coming soon!
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="anay">
+                <div>Made with 🩷 by Anay</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="showInputSection.js"></script>
+    <script src="parseInput.js"></script>
+    <script src="displayUserInfo.js"></script>
+    <script src="displayMainCredits.js"></script>
+    <script src="displayTotalCredits.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </script>
+
+
+</body>
+
+</html>
